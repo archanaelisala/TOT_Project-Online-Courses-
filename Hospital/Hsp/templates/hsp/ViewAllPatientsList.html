@@ -1,0 +1,38 @@
+{% extends 'hsp/base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<div class="container">
+		<!-- <a href="{% url 'AddNew' %}" class="btn btn-info mt-5 float-right">AddNew</a> -->
+		<h2 class="bg-secondary text-center p-3 border rounded text-white mt-5">Display Patients Data</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Username</th>
+					<th>Address</th>
+					<th>Mobile</th>
+					<th>Symptoms</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in data %}
+				<tr>
+					<td>{{i.Firstname}}</td>
+					<td>{{i.Lastname}}</td>
+					<td>{{i.Username}}</td>
+					<td>{{i.Address}}</td>
+					<td>{{i.Mobile}}</td>
+					<td>{{i.Symptoms}}</td>
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+		
+	</div>
+{% endblock content %}

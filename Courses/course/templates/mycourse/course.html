@@ -1,0 +1,31 @@
+{% extends 'mycourse/base.html' %}
+{% block title %} course {% endblock %}
+{% block content %}
+
+			<div class="container">
+					<hr><h4 class="text-center p-1 border-rounded bg-info">Welcome to Courses</h4><hr>
+					<div class="row">
+						{% for i in data %}
+						<div class="col-lg-4">
+							<div class="card" style="text-align: center;">
+							<div class="card-header">{{i.title}}<br></div>
+							<div class="card-body mt-2">
+								<img class="image-fluid" src="{{i.image.url}}" style="height:100px; object-fit: cover; width: 200px;">
+							</div>
+							<div class="card-footer mt-2">{{i.description}}</div>
+							{% if user.is_authenticated %}
+							<div class="form-group">
+								<a href="{% url 'Content' %}"><input type="submit" value="Subscribe" class="form-control btn btn-info btn-block mt-2"></a>
+							</div>
+							{% endif %}
+							</div>
+						</div>
+							
+						{% endfor %}
+					</div>
+					
+					
+			</div>
+
+
+{% endblock content %}

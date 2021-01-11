@@ -1,0 +1,25 @@
+{% extends 'html/base.html' %}
+{% block title %} register {% endblock %}
+{% block content %}
+	<div class="container mt-5">
+		<div class="card col-md-6 mx-auto bg-info mt-5 shadow-lg">
+			<div class="card-body">
+				<h2>Registration Form</h2>
+				<form method="POST">
+					{% csrf_token %}
+					<table class="table table-borderless">
+						{% for k in y %}
+						<tr>
+							<td>{{k}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					<input type="submit" name="Sbscribe" class="btn btn-secondary my-2 form-control">
+				</form>
+			</div>
+			
+		</div>
+		
+	</div>
+
+{% endblock content %}

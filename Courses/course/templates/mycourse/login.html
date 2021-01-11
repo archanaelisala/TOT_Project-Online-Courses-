@@ -1,0 +1,51 @@
+    {% extends 'mycourse/base.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<div class="container">
+    {% if messages %}
+    {% for j in messages %}
+    <div class="alert alert-{{j.tags}} alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{j}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="card col-md-6 mx-auto mt-4 shadow-lg">
+        <div class="card-body border-rounded">
+        <h2 class="p-1 text-center bg-info border-rounded my-2 border-rounded">Login Form</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group mx-3">
+                <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                <input type="password" name="password" class="form-control mt-2" placeholder="Enter password">
+                <input type="submit" value="Login" class="form-control btn btn-info btn-block mt-2">
+            </div>
+        </form>
+        </div>
+    </div>
+    <!-- <div class="card col-md-6 mx-auto mt-3 shadow-lg">
+        <div class="card-body border-rounded">
+            <h3 class="p-1 text-center bg-info border-rounded my-2">Login Form</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Enter username" class="form-control my-2">
+                <input type="password" name="password" placeholder="Enter Password" class="form-control my-2">
+                <input type="submit" name="login" class="btn btn-info btn-block my-2">
+                <a href="">Create Account/New User</a>
+            </form>
+        </div>
+        
+    </div> -->
+    
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+<!-- username: anu540
+password: anuchinnu@540 -->

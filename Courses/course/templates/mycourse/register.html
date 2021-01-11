@@ -1,0 +1,44 @@
+{% extends 'mycourse/base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+
+<div class="container mt-3">
+    <div class="card mx-auto col-md-6 shadow-lg">
+        <h2 class="bg-info text-center text-white mt-2">Registration</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <table class="table table-bordered">
+                {% for i in data %}
+                <tr>
+                    <td>{{i}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Subscribe" class="form-control btn btn-info btn-block mb-2">
+        </form>
+    </div>
+</div>
+    <!-- <div class="container mt-3">
+        <div class="card col-md-6 mx-auto shadow-lg">
+            <h2 class="text-center bg-info mt-2 border-rounded shadow-lg">Registration Form</h2>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <table class="table table-borderless">
+                        {% for i in data %}
+                        <tr>
+                            <td>{{i}}</td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </table>
+                    <input type="submit" name="Sbscribe" class="btn btn-info my-2 form-control">
+                </form>
+            </div>
+            
+        </div>
+        
+    </div> -->
+
+{% endblock content %}
+

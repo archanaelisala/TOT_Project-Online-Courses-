@@ -1,0 +1,24 @@
+{% extends 'mycourse/base.html' %}
+{% block title %} Upload content {% endblock %}
+{% block content %}
+<div class="container mt-5 col-md-8">
+	<hr><h4 class="text-center p-1 border-rounded bg-info">Welcome to Course Content</h4><hr>
+	<div class="card">
+		<div class="card-body">
+		{% for data in content %}
+		<div><video width="500" height="200" controls><source src="{{ video.video.url }}" type="video/mp4"></video><
+		</div>
+		<div class="p-1 mt-2">{{data.theory}}</div>
+		{% endfor %}
+		</div>
+		<div class="card-footer">
+			<button class="btn btn-info float-right"><a href="" class="text-white">Attempt</button></a>
+			<button class="btn btn-info float-left text-center"><a href="{% url 'course' %}" class="text-white">Back</button></a>
+			
+		</div>
+	</div>
+	
+</div>
+
+
+{% endblock content %}

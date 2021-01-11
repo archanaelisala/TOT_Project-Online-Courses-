@@ -1,0 +1,15 @@
+{% extends 'mycourse/base.html' %}
+{% block title %} Logout {% endblock %}
+{% block content %}
+<div class="container col-md-7 mt-5 ">
+	<div class="card-header">
+		<div class="card-header">
+	        <h2 class="bg-info text-center text-white border p-2 rounded mt-3">You Have Logged Out</h2></div>
+	        <div class="card-body">
+	        <h4>Are you sure you want to Login again <a href="{% url 'login' %}">Login</a></h4>	
+	        <h4><a href="{% url 'course' %}">Back</a></h4>
+	    </div>
+	    
+    </div>
+</div>
+{% endblock %}

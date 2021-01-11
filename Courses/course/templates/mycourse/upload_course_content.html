@@ -1,0 +1,20 @@
+{% extends 'mycourse/base.html' %}
+{% block title %} Upload content {% endblock %}
+{% block content %}
+<div class="container mt-3">
+    <div class="card mx-auto col-md-6 shadow-lg">
+        <h2 class="bg-info text-center text-white mt-2">Upload Content</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="card-body">
+            	<input type="file" name="video" accept="video/*" class="form-control"><br>
+            	<input type="text" name="theory" placeholder="Enter Course Content here" class="form-control">	
+                <input type="submit" value="Upload" class="form-control btn btn-info btn-block mb-2 mt-2">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock content %}
