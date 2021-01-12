@@ -15,7 +15,7 @@
 							<div class="card-footer mt-2">{{i.description}}</div>
 							{% if user.is_authenticated %}
 							<div class="form-group">
-								<a href=""><input type="submit" value="Subscribe" class="form-control btn btn-info btn-block mt-2"></a>
+								<a href="{% url 'Content' %}"><input type="submit" value="Subscribe" class="form-control btn btn-info btn-block mt-2"></a>
 							</div>
 							{% endif %}
 							</div>
