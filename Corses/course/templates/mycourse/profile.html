@@ -36,14 +36,12 @@
 				<td>{{user.last_login}}</td>
 			</tr>
 		</table>
-		<div class="form-group">
-			<!-- <div class="row"> -->
-			<button class="btn btn-block btn-info mx-2 float-right col-md-2"><a href="">Edit</a></button>
-			<!--<button class="btn btn-block btn-success mx-2 float-right col-md-2">Cance</button>
-			 </div> -->
+		
+		<!-- <button class="btn btn-block btn-info float-left col-md-2"><a href="{% url 'profile' %}">Cance</button></a> -->
 	</div>
+	<div class="form-grop">
+		<button class="btn btn-block mx-2 btn-info float-right col-md-2 text-white"><a href="{% url 'update_user' %}">Edit</a></button>
 	</div>
-	
 
 </div>
 

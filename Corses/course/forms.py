@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.forms import ModelForm
 
 
 class UserReg(UserCreationForm):
@@ -35,3 +36,15 @@ class UserReg(UserCreationForm):
 #         widgets = {
 #                 "course_name" : forms.TextInput(attrs={'class':"form-control","placeholder":"Enter course_name"})
 #         }
+
+class Uprofile(ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','first_name','last_name','email']
+
+        widgets = {
+        "username" : forms.TextInput(attrs={"class":'form-control','readonly':True}),
+        "first_name" : forms.TextInput(attrs={"class":'form-control','placeholder':'Update first_name'}),
+        "last_name" : forms.TextInput(attrs={"class":'form-control','placeholder':'Update last_name'}),
+        "email" : forms.TextInput(attrs={"class":'form-control','placeholder':'Update email'})
+        }

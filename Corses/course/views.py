@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from course.forms import UserReg
+from course.forms import UserReg,Uprofile
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
@@ -54,13 +54,15 @@ def profile(request):
     return render(request,'mycourse/profile.html')
 
 
-def update_user(request,id):
-    edit = User.objects.get(id=id)
+def update_user(request):
     if request.method == 'POST':
-        edit.username = request.POST.get('username')
-        edit.save()
-        return redirect('profile')
-    return render(request,'mycourse/update.html',{'edit':edit})
+        t = Uprofile(request.POST,instance=request.user)
+        if t.is_valid():
+            t.save()
+            messages.success(request,"updated successfully")
+            return redirect('/profile')
+    t = Uprofile(instance=request.user)
+    return render(request,'mycourse/update.html',{'t':t})
 
 
 #change password with old password

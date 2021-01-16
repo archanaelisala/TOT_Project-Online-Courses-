@@ -1,6 +1,27 @@
 {% extends 'mycourse/base.html' %}
 {% block title %} update {% endblock %}
 {% block content %}
+	<div class="container">
+		<div class="card mt-3 mx-auto shadow-lg col-md-7">
+			<div>
+				<h2 class="bg-info text-white text-center border rounded my-2">Update Profile</h2>				<form method="POST">
+					{% csrf_token %}
+					<table class="table table-borderless">
+						{% for i in t %}
+						<tr>
+							<td>{{i}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					<input type="submit" name="Update" class="btn btn-info form-control">
+				</form>
+				
+			</div>
+			
+			
+		</div>
+		
+	</div>
 
 
 
